@@ -17,17 +17,20 @@ while True:
         shopping_list.append(new_purchase)
 
     elif action == 2:
+        if not shopping_list:
+            print("Список пуст")
+        else:
+            for index, purchase in enumerate(shopping_list, start=1): 
+                print(f"{index}. {purchase}")
+             
+
+    elif action == 3:
         for index, purchase in enumerate(shopping_list, start=1): 
             print(f"{index}. {purchase}")
-
-    elif action ==3:
-        for index, purchase in enumerate(shopping_list, start=1): 
-                    print(f"{index}. {purchase}")
         user_input = int(input(f"Введите номер покупки для удаления: "))
         delete_purchase(user_input)
 
-    elif action ==4:
+    elif action == 4:
         break
     else:
         print("введите коректное число!")
-
